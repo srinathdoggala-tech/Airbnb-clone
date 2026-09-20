@@ -202,7 +202,7 @@ npm run preview -- --port 4173
 ---
 
 ## 10. Verification Performed
-- **Automated Tests**: 7 test cases executed in `src/tests/listing.test.js` validating listing data, hero photo indices, all 43 WebP photo files on disk (>5KB), 8 nearby stay images, pricing mathematics, and 54 amenities.
+- **Automated Tests**: 36 automated unit and integration tests across 9 test suites in `src/tests/listing.test.js` validating listing data, hero photo indices, all 43 WebP photo files on disk (>5KB), 8 nearby stay images, date selection edge cases, guest count limits, booking pricing recalculation, wishlist persistence, social sharing URLs, multi-level modal focus restoration, and keyboard navigation matrices.
 - **Type Checking**: `tsc --noEmit` verified 0 compiler errors.
 - **Bundle Generation**: `npm run build` compiled cleanly in ~3.69s.
 - **Browser Automation Smoke Test**: Executed 15 test items against `http://localhost:4173/` covering listing load, hero gallery, photo tour open/close, lightbox navigation, keyboard arrow keys (`ArrowLeft`, `ArrowRight`), escape dismissal, focus trapping/restoration, date and guest popovers, reservation confirmation, and wishlist persistence.

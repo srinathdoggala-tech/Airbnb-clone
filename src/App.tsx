@@ -55,8 +55,7 @@ export const App: React.FC = () => {
   const { isStickyVisible, activeSection } = useScrollSpy({ thresholdPx: 520 });
 
   // Focus return management
-  const isAnyModalOpen = activeModal !== 'none';
-  useFocusReturn(isAnyModalOpen);
+  useFocusReturn(activeModal);
 
   // Handlers
   const handlePhotoClickFromHero = (globalIndex: number) => {
