@@ -1,16 +1,12 @@
 # Romantic Jacuzzi 1BHK Candolim — Airbnb Experience
 ### PlayPower Labs Take-Home Engineering Assessment | Original Implementation
 
-<<<<<<< HEAD
-An original, desktop-first vacation rental listing experience replicating the visual appearance, interaction behaviors, and accessibility of the reference property listing:
-**Live Reference:** [Romantic Jacuzzi 1BHK Candolim | Mirashya UG10](https://airbnb-clone-umber-two.vercel.app/)
-=======
-A high-fidelity, pixel-perfect, and behavioral React clone of the Airbnb listing:
-**Romantic Jacuzzi 1BHK Candolim | Mirashya UG10**
-Reference: [https://airbnb-clone-umber-two.vercel.app/](https://airbnb-clone-umber-two.vercel.app/)
+An original, high-fidelity, and desktop-first vacation rental listing experience reproducing the visual appearance, interaction behaviors, and accessibility of the reference property listing:
+**Romantic Jacuzzi 1BHK Candolim | Mirashya UG10**  
+**Live Reference:** [Romantic Jacuzzi 1BHK Candolim | Mirashya UG10](https://airbnb-clone-umber-two.vercel.app/)  
+**Repository:** [https://github.com/srinathdoggala-tech/Airbnb-clone.git](https://github.com/srinathdoggala-tech/Airbnb-clone.git)
 
 Built for the **Playpower Labs Software Engineer Assessment**.
->>>>>>> ad220fc187ff7e64df5caefba46c97ff63694b7d
 
 ---
 

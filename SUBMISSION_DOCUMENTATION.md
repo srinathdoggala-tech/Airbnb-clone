@@ -5,7 +5,7 @@
 > **Project Scope**: **Pure Frontend Web Application** (React 18, Vite, Vanilla CSS, WebP Assets, Browser Storage)  
 > **Target Reference Site**: [https://airbnb-clone-umber-two.vercel.app](https://airbnb-clone-umber-two.vercel.app)  
 > **Listing Reference**: *Romantic Jacuzzi 1BHK Candolim | Mirashya UG10* (Candolim, Goa, India)  
-> **Repository**: [https://github.com/sushantkumar1807/airbnb-clone-umber-two.git](https://github.com/sushantkumar1807/airbnb-clone-umber-two.git)  
+> **Repository**: [https://github.com/srinathdoggala-tech/Airbnb-clone.git](https://github.com/srinathdoggala-tech/Airbnb-clone.git)  
 > **Companion Architecture Visuals**: [architecture_diagram.png](file:///e:/projects/clone_website/architecture_diagram.png) · [architecture_diagram.svg](file:///e:/projects/clone_website/architecture_diagram.svg)
 
 ---
@@ -1014,8 +1014,8 @@ dist/assets/index-CrZYF-m-.js   327.35 kB │ gzip: 84.87 kB
 ### Step-by-Step Setup
 ```bash
 # 1. Clone repository
-git clone https://github.com/sushantkumar1807/airbnb-clone-umber-two.git
-cd airbnb-clone-umber-two
+git clone https://github.com/srinathdoggala-tech/Airbnb-clone.git
+cd Airbnb-clone
 
 # 2. Install dependencies (React 18, Vite)
 npm install
