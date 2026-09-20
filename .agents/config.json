@@ -1,0 +1,33 @@
+{
+  "name": "airbnb-clone-agent-orchestrator",
+  "version": "1.0.0",
+  "description": "FAANG-grade agent configuration for high-fidelity React cloning and SWAT audit protocol",
+  "agents": {
+    "react-architect": {
+      "path": "./agents/react-architect.md",
+      "role": "Frontend Architecture & Design System Integrity"
+    },
+    "code-reviewer": {
+      "path": "./agents/code-reviewer.md",
+      "role": "SWAT Security & Quality Gate Auditor"
+    },
+    "bug-fixer": {
+      "path": "./agents/bug-fixer.md",
+      "role": "Root-Cause Triage & Defect Resolution"
+    },
+    "qa-test-engineer": {
+      "path": "./agents/qa-test-engineer.md",
+      "role": "Parity Verification & Automated Testing"
+    }
+  },
+  "commands": {
+    "audit-feature": "./commands/audit-feature.md",
+    "verify-parity": "./commands/verify-parity.md",
+    "fix-bug": "./commands/fix-bug.md",
+    "write-tests": "./commands/write-tests.md"
+  },
+  "skills": {
+    "expert_airbnb_cloning": "./skills/expert_airbnb_cloning",
+    "expert_ai_workflows": "./skills/expert_ai_workflows"
+  }
+}

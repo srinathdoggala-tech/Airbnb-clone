@@ -1,0 +1,7 @@
+import React from 'react';
+
+export default function StickyTabs({ stickyVisible, activeTab, onTabClick, onReserveClick }) {
+  return (
+    <div className={`_JXzroy ${stickyVisible ? '_fTQmRt' : ''}`} id="_JXzroy" aria-hidden={!stickyVisible}><div className="_Zudfyi"><nav className="_hCwPJL" aria-label="Listing sections"><a href="#photos" data-target="photos" className={activeTab === 'photos' ? '_KOWlKT' : ''} onClick={(e) => { e.preventDefault(); onTabClick('photos'); }}>Photos</a><a href="#amenities" data-target="amenities" className={activeTab === 'amenities' ? '_KOWlKT' : ''} onClick={(e) => { e.preventDefault(); onTabClick('amenities'); }}>Amenities</a><a href="#reviews" data-target="reviews" className={activeTab === 'reviews' ? '_KOWlKT' : ''} onClick={(e) => { e.preventDefault(); onTabClick('reviews'); }}>Reviews</a><a href="#location" data-target="location" className={activeTab === 'location' ? '_KOWlKT' : ''} onClick={(e) => { e.preventDefault(); onTabClick('location'); }}>Location</a></nav><div className="_YRQCMM"><div className="_KQgxsf"><div><span className="_aykCAY">₹28,499</span> <span className="_FVmwas">for 5 nights</span></div><div className="_CBhLfH"><span className="_QdaeUh" aria-hidden="true"></span> 4.95 · <span className="sn-reviews">19 reviews</span></div></div><button className="_NhmiWB _jCniyC" type="button" onClick={onReserveClick}>Reserve</button></div></div></div>
+  );
+}
