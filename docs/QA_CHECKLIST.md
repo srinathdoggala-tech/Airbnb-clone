@@ -1,70 +1,33 @@
-# Quality Assurance (QA) Verification Checklist
-## PlayPower Labs Take-Home Assessment: Original Airbnb Listing Experience
+# QA Checklist
 
----
+## Build
+- TypeScript (`npx tsc --noEmit`): **PASS** (Compiled with 0 type errors)
+- Production build (`npm run build`): **PASS** (Vite v6 production bundle built cleanly in ~3.69s)
+- Tests (`npm test`): **PASS** (Node test runner executed 7 tests in `src/tests/listing.test.js`, 7 passed, 0 failed in ~174ms)
 
-### Verification Summary Status
-- **Overall Status**: **PASSED (100% Verified)**
-- **Automated Compiler Gate**: `npx tsc --noEmit` exited with code `0`.
-- **Production Bundle Build**: `npm run build` completed in `13.91s` with code `0`.
-- **Live Interactive QA**: Verified via browser subagent on `http://localhost:4173/`.
+## Functional
+- Listing page: **PASS** (Heading, specs, highlights, description, sleeping arrangements, amenities, calendar, reviews, map, host, and nearby stays rendered)
+- Photo tour: **PASS** (Opens from "Show all 43 photos", renders 9 room categories with sticky navigation pills, closes on Back button or Escape)
+- Lightbox: **PASS** (Opens from hero photos or tour, displays centered photo with counter `X / 43`, previous/next chevrons, boundaries respected)
+- Keyboard navigation: **PASS** (`ArrowLeft` and `ArrowRight` navigate photos; `Escape` dismisses active overlays; `Tab` navigates interactive elements)
+- Modal behavior: **PASS** (Modal transitions mutual exclusivity, body scroll locking during active modal, focus trap active inside dialog)
 
----
+## Accessibility
+- Semantic structure: **PASS** (Landmarks `<header>`, `<main>`, `<nav>`, `<section>`, `<footer>` used; interactive controls use `<button>` / `<a>`)
+- Focus management: **PASS** (Focus trapped inside open dialogs via `useFocusTrap`; focus returned to trigger button on close via `useFocusReturn`)
+- Keyboard access: **PASS** (All actionable features accessible via keyboard navigation; visible outline `:focus-visible` present)
+- Accessible names: **PASS** (`aria-label` applied to icon-only controls, navigation buttons, and modal dialogs)
+- Alt text: **PASS** (Descriptive `label` rendered as `alt` text across all 43 listing photos)
+- Contrast review: **PASS** (High-contrast text `#222222` against white `#ffffff` and brand contrast reviewed)
 
-## 1. Functional Verification Matrix
+## Visual
+- Layout: **PASS** (Desktop container constrained to `1120px` max-width, 2-column split with 370px sticky card, 80px gap)
+- Typography: **PASS** (Clean sans-serif typography hierarchy matching reference Airbnb styling)
+- Gallery: **PASS** (5-tile asymmetric grid: 1 large 2-row photo on left, 4 square tiles on right, rounded outer corners)
+- Modals: **PASS** (Full-screen white Photo Tour overlay, high-focus single-photo Lightbox with dark backdrop, rounded cards for Share/Reservation)
 
-- [x] **Listing renders**: Property title, location, rating (4.95), reviews count (19), specs, and host line render correctly.
-- [x] **Gallery renders**: 5-tile asymmetric hero gallery renders 1 primary photo (2 rows) and 4 supporting tiles with hover dimming and scale effects.
-- [x] **Photo tour opens**: Clicking "Show all 43 photos" or hero photo opens the dedicated full-screen Photo Tour overlay.
-- [x] **Photo tour closes**: Clicking the "Photos" back button or pressing Escape dismisses the tour, restoring view to the listing.
-- [x] **Lightbox opens**: Clicking any photo in the hero gallery or in the Photo Tour launches the focused single-photo Lightbox.
-- [x] **Previous works**: Left chevron button navigates to previous photo; correctly disabled on index 0.
-- [x] **Next works**: Right chevron button navigates to next photo; dynamically updates counter (`X / 43`).
-- [x] **Escape closes**: Pressing `Escape` closes the active modal (Lightbox returns to Tour or Listing; Tour returns to Listing).
-- [x] **Arrow keys work**: `ArrowLeft` navigates to previous photo; `ArrowRight` navigates to next photo in Lightbox.
-- [x] **Booking interactions work**: "Reserve" CTA triggers reservation confirmed modal with summary calculations.
-- [x] **Guest selector works**: Increment and decrement buttons adjust adults, children, infants, and pets with minimum (1 adult) and maximum (3 guests) limits.
-- [x] **Date selector works**: Clicking Check-in/Checkout opens date popover; Clear dates resets selection.
-- [x] **Wishlist toggle works**: Clicking Save toggles heart fill to `#FF385C`, displays confirmation toast, and persists in `localStorage`.
-- [x] **Share modal works**: Share button opens dialog with preview and one-click copy to clipboard with toast.
-
----
-
-## 2. Accessibility Verification Matrix (WCAG 2.2 AA)
-
-- [x] **Keyboard-only navigation**: All elements navigable via `Tab`, `Shift+Tab`, `Enter`, `Space`, `ArrowLeft`, `ArrowRight`, `Escape`.
-- [x] **Visible focus state**: High-contrast 2px solid `#222222` outline with 2px offset on all interactive elements via `:focus-visible`.
-- [x] **Semantic HTML**: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`. Only native `<button>` and `<a>` elements for interaction.
-- [x] **Correct button labels**: Every button has descriptive text or explicit `aria-label` (e.g. `Close amenities dialog`, `Previous photo`).
-- [x] **Correct alt text**: All 43 photos and 8 nearby stays include descriptive, non-empty `alt` attributes.
-- [x] **Dialog semantics**: Modals enforce `role="dialog"`, `aria-modal="true"`, and accessible names (`aria-label` / `aria-labelledby`).
-- [x] **Focus enters modal**: Focus trapped inside open dialog via `useFocusTrap` hook.
-- [x] **Focus returns after modal closes**: Focus returned to triggering button or photo tile via `useFocusReturn` hook.
-- [x] **Escape closes modal**: Handled across all modals via `useKeyboardNavigation` hook.
-- [x] **Screen-reader announcements**: Dynamic counter (`1 / 43`) and toasts announced via `aria-live="polite"`.
-
----
-
-## 3. Visual Parity & Layout Matrix
-
-- [x] **Correct layout**: Desktop 2-column layout (approx 65% content left, 35% sticky card right) matching reference dimensions.
-- [x] **Correct image proportions**: Aspect ratios maintained (`16/10` and `4/3`), object-fit `cover` with zero distortion.
-- [x] **Correct spacing**: Standardized Airbnb spacing scale (`var(--space-xs)` through `var(--space-3xl)`).
-- [x] **Correct typography**: Clean `Inter` font scale, weights (400, 500, 600, 700), line-heights, and letter-spacing.
-- [x] **Correct borders**: `#EBEBEB` light dividers, `#DDDDDD` medium borders, `#222222` dark active borders.
-- [x] **Correct radii**: 8px (`--radius-sm`), 12px (`--radius-md`), 16px (`--radius-lg`), and pill (`--radius-pill`).
-- [x] **Correct shadows**: Subtle elevation on cards (`--shadow-card`), hover elevation, and modal backdrops.
-- [x] **Correct sticky behavior**: Sticky navigation bar slides in smoothly when scrolling past hero gallery (`useScrollSpy`).
-- [x] **Correct lightbox appearance**: Dark/clean stage with centered photo, subtle fade keyframe, and sharp typography.
-
----
-
-## 4. Engineering & Build Verification
-
-- [x] **TypeScript clean**: `npx tsc --noEmit` passes with 0 errors.
-- [x] **No unnecessary duplication**: Reusable components, single source of truth in `listing.ts`, clean types in `listing.ts`.
-- [x] **No obvious console errors**: Zero runtime exceptions in browser console.
-- [x] **Production build succeeds**: `npm run build` succeeds producing optimized bundle in `dist/`.
-- [x] **No secrets committed**: Clean repository with zero API keys or private credentials.
-- [x] **No node_modules committed**: `.gitignore` correctly ignores `node_modules/` and `dist/`.
-- [x] **Asset pipeline**: 43 WebP photos served locally with dual-tier CDN fallback on image error.
+## Known Limitations
+- Mobile viewports were not evaluated, as the assessment strictly specified desktop scope.
+- Assistive screen reader software (e.g. NVDA, JAWS, VoiceOver) was not tested with live audio output; compliance relies on standard WAI-ARIA implementations.
+- Payment processing is simulated through UI states; no live payment gateway or third-party merchant integration is connected.
+- Static data model is used in place of dynamic server database persistence.

@@ -4,7 +4,7 @@
 > **Reference Page**: [https://airbnb-clone-umber-two.vercel.app](https://airbnb-clone-umber-two.vercel.app)  
 > **Property**: *Romantic Jacuzzi 1BHK Candolim | Mirashya UG10* (Candolim, Goa, India)  
 > **Target Scope**: **Pure Frontend Web Application** (React 18, Vite, Vanilla CSS, WebP Assets, Browser Storage)  
-> **Guarantee**: Executing this prompt sequence in an AI coding environment (Cursor, Claude Code, Antigravity, ChatGPT) step-by-step will produce the complete, pixel-perfect, behaviorally identical clone with all 3 mandatory views (Listing Page, Photo Tour, Lightbox Viewer), 43 categorized photos, 54 amenities, dynamic pricing, and all QA bug fixes.
+> **Workflow Objective**: This prompt sequence was designed to guide an AI coding workflow step-by-step to produce the desktop vacation rental listing experience with all 3 mandatory views (Listing Page, Photo Tour, Lightbox Viewer), 43 categorized photos, 54 amenities, dynamic pricing, and QA verifications.
 
 ---
 
@@ -34,7 +34,7 @@ PROMPT 1: Project Scaffolding, Build Config & Airbnb Design Tokens
 ================================================================================
 ROLE: Principal Frontend Architect
 OBJECTIVE: Scaffold a high-performance React 18 + Vite project and build the core Airbnb CSS design system.
-CONTEXT: We are building a pixel-perfect, desktop-first clone of the Airbnb listing at https://airbnb-clone-umber-two.vercel.app. The project is a pure frontend application with zero backend runtime dependencies.
+CONTEXT: We are building a high-fidelity, desktop-first clone of the Airbnb listing at https://airbnb-clone-umber-two.vercel.app. The project is a pure frontend application with zero backend runtime dependencies.
 
 INSTRUCTIONS:
 1. Initialize a clean Vite project with React template:
@@ -479,8 +479,8 @@ VERIFICATION: Share button opens 8-channel modal; Wishlist heart fills red `#ff3
 PROMPT 11: SWAT Quality Gate Audit, Automated Test Suite & Build Verification
 ================================================================================
 ROLE: Principal QA & Release Engineer
-OBJECTIVE: Build the native Node.js test suite in `src/tests/listing.test.js` and verify zero defects against the SWAT matrix.
-CONTEXT: Enforce strict quality gates ensuring all 43 photos, 54 amenities, 5-night pricing, and client QA fixes are 100% verified.
+OBJECTIVE: Build the native Node.js test suite in `src/tests/listing.test.js` and verify functional requirements against the SWAT matrix.
+CONTEXT: Enforce strict quality gates ensuring all 43 photos, 54 amenities, 5-night pricing, and client QA fixes are fully verified.
 
 INSTRUCTIONS:
 1. In `src/tests/listing.test.js`, write comprehensive unit tests using native `node:test` and `node:assert`:

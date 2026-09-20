@@ -6,7 +6,7 @@
 > **Target Reference Site**: [https://airbnb-clone-umber-two.vercel.app](https://airbnb-clone-umber-two.vercel.app)  
 > **Listing Reference**: *Romantic Jacuzzi 1BHK Candolim | Mirashya UG10* (Candolim, Goa, India)  
 > **Repository**: [https://github.com/srinathdoggala-tech/Airbnb-clone.git](https://github.com/srinathdoggala-tech/Airbnb-clone.git)  
-> **Companion Architecture Visuals**: [architecture_diagram.png](file:///e:/projects/clone_website/architecture_diagram.png) · [architecture_diagram.svg](file:///e:/projects/clone_website/architecture_diagram.svg)
+> **Companion Architecture Visuals**: [architecture_diagram.png](architecture_diagram.png) · [architecture_diagram.svg](architecture_diagram.svg)
 
 ---
 
@@ -26,7 +26,7 @@
    - [4.2 Asset Strategy: Why WebP Over Legacy JPEG/PNG (71.6% Payload Reduction)](#42-asset-strategy-why-webp-over-legacy-jpegpng-716-payload-reduction)
    - [4.3 Folder Architecture: Domain-Driven Component Sovereignty](#43-folder-architecture-domain-driven-component-sovereignty)
    - [4.4 AI Sub-Agents & Skills Architecture](#44-ai-sub-agents--skills-architecture)
-5. [Master Prompt Sequence for 100% Reproduction (Clear & Complete)](#5-master-prompt-sequence-for-100-reproduction-clear--complete)
+5. [Master Prompt Sequence for End-to-End Reproduction (Clear & Complete)](#5-master-prompt-sequence-for-end-to-end-reproduction-clear--complete)
    - [Prompt 1: Project Scaffolding, Build Config & Airbnb Design Tokens](#prompt-1-project-scaffolding-build-config--airbnb-design-tokens)
    - [Prompt 2: Normalized Listing Data Model & WebP Asset Pipeline](#prompt-2-normalized-listing-data-model--webp-asset-pipeline)
    - [Prompt 3: Site Header, Search Pill & Sticky Subnavigation Bar](#prompt-3-site-header-search-pill--sticky-subnavigation-bar)
@@ -47,7 +47,7 @@
 ## 1. Executive Summary & Assessment Deliverables
 
 In strict accordance with the **Playpower Labs Take-Home Task: Airbnb-Clone App** specifications:
-- **Scope**: Desktop-first, **pure frontend web application** replicating the reference listing `https://airbnb-clone-umber-two.vercel.app` with pixel-perfect visual and behavioral parity.
+- **Scope**: Desktop-first, **pure frontend web application** replicating the reference listing `https://airbnb-clone-umber-two.vercel.app` with high visual and behavioral fidelity.
 - **Three Mandatory Views Fully Recreated**:
   1. **Primary Listing Page**: The full property page including site navigation, 5-photo asymmetric hero grid with hover dimming, sticky scroll-spy subnavigation, room overview, description with clamp, 54-item amenities system, dual-month calendar, floating booking card with live pricing calculation, host profile with co-hosts, interactive location map, and nearby stays carousel.
   2. **Photo Tour Overlay**: Full-screen modal opened via "Show all photos" or hero grid photos, showcasing all 43 real property photos organized into 9 room categories with thumbnail quick-jump navigation and scroll-locking.
@@ -229,7 +229,7 @@ flowchart LR
     ConversionScript --> OptimizedWebP["WebP Assets (4.2 MB Total, 71.6% Reduction)"]
     
     subgraph BrowserRendering["Browser Image Delivery Pipeline"]
-        OptimizedWebP --> ImgElement["img tag with decoding='async' and aspect-ratio (CLS = 0.000)"]
+        OptimizedWebP --> ImgElement["img tag with decoding='async' and aspect-ratio (minimal layout shift)"]
         ImgElement --> NetworkCheck{"Asset Load OK?"}
         NetworkCheck -- "Success (200 OK)" --> DisplayStage["Render High-Fidelity Photo (SSIM > 0.985)"]
         NetworkCheck -- "Fail / 404 / Cache Miss" --> OnErrorHook["onError Handler Cascades"]
@@ -434,7 +434,7 @@ airbnb-clone-candolim/
 │   └── config.json             # Agent registry manifest
 ├── package.json                # Project dependencies & build scripts
 ├── vite.config.js              # Bundler configuration
-├── prompts_sequence.md         # Master Prompts 1-11 for 100% reproduction
+├── prompts_sequence.md         # Master Prompts 1-11 for End-to-End Reproduction
 └── README.md                   # Repository guide
 ```
 
@@ -455,9 +455,9 @@ Following the modern AI-assisted engineering paradigm, `.agents/` encapsulates d
 
 ---
 
-## 5. Master Prompt Sequence for 100% Reproduction (Clear & Complete)
+## 5. Master Prompt Sequence for End-to-End Reproduction (Clear & Complete)
 
-The following **11 reproducible, fully articulated prompts** can be fed into an AI coding assistant (Cursor, Claude Code, Antigravity, ChatGPT) to reproduce the entire application step-by-step from scratch:
+The following **11 reproducible, fully articulated prompts** can be fed into an AI coding assistant (Cursor, Claude Code, Antigravity, ChatGPT) to reproduce the entire application step-by-step:
 
 ```text
 ================================================================================
@@ -465,7 +465,7 @@ PROMPT 1: Project Scaffolding, Build Config & Airbnb Design Tokens
 ================================================================================
 ROLE: Principal Frontend Architect
 OBJECTIVE: Scaffold a high-performance React 18 + Vite project and build the core Airbnb CSS design system.
-CONTEXT: We are building a pixel-perfect, desktop-first clone of the Airbnb listing at https://airbnb-clone-umber-two.vercel.app. The project is a pure frontend application with zero backend runtime dependencies.
+CONTEXT: We are building a high-fidelity, desktop-first clone of the Airbnb listing at https://airbnb-clone-umber-two.vercel.app. The project is a pure frontend application with zero backend runtime dependencies.
 
 INSTRUCTIONS:
 1. Initialize a clean Vite project with React template:
@@ -906,8 +906,8 @@ VERIFICATION: Share button opens 8-channel modal; Wishlist heart fills red `#ff3
 PROMPT 11: SWAT Quality Gate Audit, Automated Test Suite & Build Verification
 ================================================================================
 ROLE: Principal QA & Release Engineer
-OBJECTIVE: Build the native Node.js test suite in `src/tests/listing.test.js` and verify zero defects against the SWAT matrix.
-CONTEXT: Enforce strict quality gates ensuring all 43 photos, 54 amenities, 5-night pricing, and client QA fixes are 100% verified.
+OBJECTIVE: Build the native Node.js test suite in `src/tests/listing.test.js` and verify functional requirements against the SWAT matrix.
+CONTEXT: Enforce strict quality gates ensuring all 43 photos, 54 amenities, 5-night pricing, and client QA fixes are fully verified.
 
 INSTRUCTIONS:
 1. In `src/tests/listing.test.js`, write comprehensive unit tests using native `node:test` and `node:assert`:

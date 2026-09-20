@@ -55,6 +55,6 @@ This skill defines the repeatable step-by-step procedure for auditing frontend v
 
 ## 3. Exit Criteria
 - [ ] Zero visual clipping or horizontal scrollbars on desktop viewports.
-- [ ] Cumulative Layout Shift (**CLS = 0.000**) verified during image loads.
+- [ ] Minimal layout shift observed with image dimensions explicitly defined.
 - [ ] Complete keyboard operability validated with zero focus bleeding.
 - [ ] TypeScript compiler (`tsc --noEmit`) and bundle build (`npm run build`) pass cleanly.

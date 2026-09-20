@@ -9,7 +9,7 @@ description: Senior UI/UX Engineer agent responsible for visual hierarchy, spaci
 1. **Visual Hierarchy & Layout Auditing**:
    - Verify page container constraints (`--max-content-width: 1120px`).
    - Audit 2-column content-to-sidebar ratio (~65% content left, ~35% sticky card right).
-   - Ensure sticky navigation bar transitions smoothly without layout shift (CLS = 0).
+   - Ensure sticky navigation bar transitions smoothly without jarring layout shifts.
 2. **Design Token Consistency**:
    - Verify that all components strictly utilize CSS variables from `src/styles/tokens.css`.
    - Prevent hardcoded hex colors, arbitrary pixel padding, and magic numbers.

@@ -5,7 +5,7 @@
 > **Property**: *Romantic Jacuzzi 1BHK Candolim | Mirashya UG10* (Candolim, Goa, India)  
 > **Implementation Scope**: **Pure Frontend Web Application** (React 18, Vite, Vanilla CSS Design System, WebP Asset Pipeline, Browser Storage)  
 > **Conceptual Scaling Blueprint**: Global multi-region vacation rental marketplace (100M+ listings, 50,000 QPS, 99.999% availability)  
-> **Companion Architecture Visuals**: [architecture_diagram.png](file:///e:/projects/clone_website/architecture_diagram.png) · [architecture_diagram.svg](file:///e:/projects/clone_website/architecture_diagram.svg)
+> **Companion Architecture Visuals**: [architecture_diagram.png](architecture_diagram.png) · [architecture_diagram.svg](architecture_diagram.svg)
 
 ---
 
@@ -132,7 +132,7 @@ flowchart LR
     PillowWorker --> WebPAssets["Optimized WebP Assets (4.2 MB Total, 71.6% Reduction)"]
     
     subgraph BrowserRendering["Browser Image Delivery Pipeline"]
-        WebPAssets --> NativeDecode["img tag with decoding='async' and explicit aspect-ratio (CLS = 0.000)"]
+        WebPAssets --> NativeDecode["img tag with decoding='async' and explicit aspect-ratio (minimal layout shift)"]
         NativeDecode --> NetworkCheck{"Asset Load OK?"}
         NetworkCheck -- "Success (200 OK)" --> RenderStage["Render High-Res Image (SSIM > 0.985)"]
         NetworkCheck -- "Fail / 404 / Offline" --> OnErrorCascade["onError Handler Triggered"]

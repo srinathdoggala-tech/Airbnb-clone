@@ -7,18 +7,18 @@
 This document defines the end-to-end engineering specification, UI decomposition, interaction architecture, accessibility design, and verification plan for an original, desktop-first vacation rental listing experience modeled after the reference listing:
 **Reference:** [Romantic Jacuzzi 1BHK Candolim | Mirashya UG10](https://airbnb-clone-umber-two.vercel.app/)
 
-The implementation is built **from scratch** using modern React 18, TypeScript, Vite, and modular CSS design tokens, adhering to the **SWAT Engineering Protocol** (Security, Write-Safety, Availability, and Threat Defense) and **WCAG 2.2 Level AA Accessibility Standards**.
+The implementation is built using modern React 18, TypeScript, Vite, and modular CSS design tokens, applying the **SWAT Engineering Protocol** (Security, Write-Safety, Availability, and Threat Defense) and **WCAG 2.2 Level AA accessibility guidelines**.
 
 ---
 
 ## 1. SWAT Matrix & Architectural Gate Criteria
 
-| SWAT Gate | Engineering Guarantee | Implementation Protocol |
+| SWAT Gate | Engineering Objective | Implementation Protocol |
 | :--- | :--- | :--- |
 | **Security** | Zero-trust boundary isolation & XSS defense | No `dangerouslySetInnerHTML`. All user inputs (dates, guest counts, share links) strictly sanitized via TypeScript guards. External URLs enforce `rel="noopener noreferrer"`. `localStorage` keys validated against type schemas. |
 | **Write-Safety** | Element verification & focus preservation | Before triggering state changes, verify DOM accessibility. Modal dialogs enforce strict focus trapping via `useFocusTrap` and return focus to triggering element via `useFocusReturn`. Body scroll locking (`overflow: hidden`) eliminates dual-scroll artifacts. |
-| **Availability** | Event loop protection & CLS = 0 | All 43 photos delivered in optimized local WebP format with dual-tier fallback to remote CDN. Image dimensions define explicit aspect ratios (`16/10` and `4/3`) ensuring **Cumulative Layout Shift (CLS) = 0.000**. Non-hero images set `loading="lazy"` and `decoding="async"`. |
-| **Threat Defense** | Edge resilience & autonomous reliability | Zero-network local asset serving guarantees 100% offline uptime and resilience against external CDN rate-limiting or blocking. Micro-interactions utilize standard eased transitions without unnatural synchronous jumps. |
+| **Availability** | Event loop protection & layout stability | All 43 photos delivered in optimized local WebP format with dual-tier fallback to remote CDN. Image dimensions define explicit aspect ratios (`16/10` and `4/3`) minimizing Cumulative Layout Shift. Non-hero images set `loading="lazy"` and `decoding="async"`. |
+| **Threat Defense** | Edge resilience & autonomous reliability | Local asset serving provides offline resilience and protects against external CDN rate-limiting or blocking. Micro-interactions utilize standard eased transitions without unnatural synchronous jumps. |
 
 ---
 
