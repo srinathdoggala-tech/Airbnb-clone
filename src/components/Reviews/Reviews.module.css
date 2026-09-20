@@ -1,0 +1,139 @@
+.reviewsSection {
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-xl);
+}
+
+/* Category Ratings Grid */
+.ratingsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md) var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.ratingCategoryRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+}
+
+.ratingBarContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 50%;
+}
+
+.ratingBar {
+  flex-grow: 1;
+  height: 4px;
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.ratingBarFill {
+  height: 100%;
+  background-color: var(--color-text-primary);
+  border-radius: var(--radius-pill);
+}
+
+.ratingScore {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  min-width: 24px;
+}
+
+/* Review Cards Grid */
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+}
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.reviewerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.reviewerAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-circle);
+  background-color: #717171;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+}
+
+.reviewerMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewerName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.reviewerTenure {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.reviewRatingDate {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.reviewText {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+}
+
+.showMoreReviewBtn {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-block;
+  margin-top: var(--space-xxs);
+}
+
+@media (max-width: 800px) {
+  .ratingsGrid {
+    grid-template-columns: 1fr;
+  }
+  .reviewsGrid {
+    grid-template-columns: 1fr;
+  }
+}

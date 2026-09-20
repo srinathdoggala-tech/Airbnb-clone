@@ -1,4 +1,4 @@
-# Sequence of AI-Assisted Master Prompts for 100% Clone Reproduction
+# AI-Assisted Development Log
 
 > **Assessment**: Playpower Labs Take-Home Task: Airbnb-Clone App  
 > **Reference Page**: [https://airbnb-clone-umber-two.vercel.app](https://airbnb-clone-umber-two.vercel.app)  
@@ -48,10 +48,11 @@ INSTRUCTIONS:
      server: { port: 3000, host: true }
    });
    ```
-3. In `index.html`, set page title to:
+
+1. In `index.html`, set page title to:
    `Romantic Jacuzzi 1BHK Candolim | Mirashya UG10 - Airbnb`
    Add the Airbnb favicon and configure font preloading for Circular / Cereal fonts.
-4. In `src/styles/App.css`, implement the complete Airbnb design system:
+2. In `src/styles/App.css`, implement the complete Airbnb design system:
    - Root Design Tokens:
      --rausch: #FF385C;
      --rausch-dark: #E00B41;
@@ -74,10 +75,11 @@ INSTRUCTIONS:
      `._joiPBF` { flex: 1; min-width: 0; }
      `._iJTxKe` { width: 370px; flex-shrink: 0; position: sticky; top: 120px; }
      `._SPYgTj` { width: 100%; border-top: 1px solid var(--line-soft); margin-top: 48px; padding-top: 48px; }
-5. Add baseline resets for typography, font smoothing, box-sizing, and button borders.
+3. Add baseline resets for typography, font smoothing, box-sizing, and button borders.
 
-VERIFICATION: Run `npm run dev`. Navigate to http://localhost:3000/ to verify the blank shell loads with zero console errors and Airbnb CSS tokens active.
+VERIFICATION: Run `npm run dev`. Navigate to <http://localhost:3000/> to verify the blank shell loads with zero console errors and Airbnb CSS tokens active
 ================================================================================
+
 ```
 
 ```text
@@ -522,8 +524,8 @@ VERIFICATION: All 7 automated tests pass (7 pass, 0 fail); Vite production build
 | **Hero Gallery** | Prompt 4 | 5-Photo Asymmetric Grid with Hover Dimming | Visual inspect 5 tiles |
 | **Left Rail** | Prompt 5 | Overview, Description, Amenities, Calendar | Test "Show original" & "Clear dates" |
 | **Right Rail** | Prompt 6 | Sticky Booking Card & 5-Night Pricing | Check ₹28,500 / ₹33,895 |
-| **Bottom Sections**| Prompt 7 | Reviews, Map, Host, Policies, Nearby Slider | Slide nearby carousel |
+| **Bottom Sections** | Prompt 7 | Reviews, Map, Host, Policies, Nearby Slider | Slide nearby carousel |
 | **View 2: Tour** | Prompt 8 | Full-Screen 43-Photo Gallery Across 9 Rooms | Click "Show all photos" |
-| **View 3: Lightbox**| Prompt 9 | Single-Photo Stage with Arrows & Keys | Press ArrowLeft / ArrowRight |
+| **View 3: Lightbox** | Prompt 9 | Single-Photo Stage with Arrows & Keys | Press ArrowLeft / ArrowRight |
 | **Modals & App** | Prompt 10 | Share Modal, Red Heart, App State Machine | Test Copy link & Wishlist save |
 | **Quality Gate** | Prompt 11 | SWAT Test Suite & Production Bundle | `npm test` & `npm run build` |

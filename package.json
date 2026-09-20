@@ -1,11 +1,11 @@
 {
-  "name": "airbnb-clone-candolim",
+  "name": "playpower-airbnb-listing",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "node --test src/tests/listing.test.js"
   },
@@ -14,7 +14,10 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
     "vite": "^6.0.7"
   }
 }
