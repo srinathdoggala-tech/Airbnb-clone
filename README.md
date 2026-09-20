@@ -4,7 +4,7 @@ A high-fidelity, pixel-perfect, and behavioral React clone of the Airbnb listing
 **Romantic Jacuzzi 1BHK Candolim | Mirashya UG10**
 Reference: [https://airbnb-clone-umber-two.vercel.app/](https://airbnb-clone-umber-two.vercel.app/)
 
-Built for the **Playpower Labs Senior Software Engineer Assessment**.
+Built for the **Playpower Labs Software Engineer Assessment**.
 
 ---
 
