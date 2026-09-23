@@ -95,18 +95,27 @@ export function useUrlSync({
   onStateChange,
 }: UseUrlSyncOptions) {
   const isNavigatingFromPopState = useRef(false);
+  const onStateChangeRef = useRef(onStateChange);
+  const isInitializedRef = useRef(false);
 
-  // 1. Initial Load: Read URL search parameters on mount
+  useEffect(() => {
+    onStateChangeRef.current = onStateChange;
+  });
+
+  // 1. Initial Load: Read URL search parameters on mount ONLY ONCE
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (isInitializedRef.current) return;
+    isInitializedRef.current = true;
 
     const initial = parseUrlState(window.location.search, totalPhotos);
     if (initial.modal !== 'none') {
-      onStateChange(initial);
+      onStateChangeRef.current(initial);
     }
-  }, [totalPhotos, onStateChange]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  // 2. Synchronize React state changes -> URL pushState
+  // 2. Synchronize React state changes -> URL
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -116,19 +125,28 @@ export function useUrlSync({
     }
 
     const currentUrlState = parseUrlState(window.location.search, totalPhotos);
-    const hasChanged =
-      currentUrlState.modal !== activeModal ||
-      (activeModal === 'lightbox' && currentUrlState.photoIndex !== lightboxIndex) ||
-      (activeModal === 'lightbox' && currentUrlState.origin !== lightboxOrigin);
+    const modalChanged = currentUrlState.modal !== activeModal;
+    const photoChanged = activeModal === 'lightbox' && currentUrlState.photoIndex !== lightboxIndex;
+    const originChanged = activeModal === 'lightbox' && currentUrlState.origin !== lightboxOrigin;
 
-    if (hasChanged) {
+    if (modalChanged || photoChanged || originChanged) {
       const query = buildUrlQuery(activeModal, lightboxIndex, lightboxOrigin);
       const newUrl = `${window.location.pathname}${query}${window.location.hash}`;
-      window.history.pushState(
-        { modal: activeModal, photoIndex: lightboxIndex, origin: lightboxOrigin },
-        '',
-        newUrl
-      );
+      
+      // Modal transition -> pushState; stepping photos within lightbox -> replaceState (eliminates lag and history stack bloat)
+      if (modalChanged) {
+        window.history.pushState(
+          { modal: activeModal, photoIndex: lightboxIndex, origin: lightboxOrigin },
+          '',
+          newUrl
+        );
+      } else {
+        window.history.replaceState(
+          { modal: activeModal, photoIndex: lightboxIndex, origin: lightboxOrigin },
+          '',
+          newUrl
+        );
+      }
     }
   }, [activeModal, lightboxIndex, lightboxOrigin, totalPhotos]);
 
@@ -139,12 +157,12 @@ export function useUrlSync({
     const handlePopState = () => {
       isNavigatingFromPopState.current = true;
       const stateFromUrl = parseUrlState(window.location.search, totalPhotos);
-      onStateChange(stateFromUrl);
+      onStateChangeRef.current(stateFromUrl);
     };
 
     window.addEventListener('popstate', handlePopState);
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
-  }, [totalPhotos, onStateChange]);
+  }, [totalPhotos]);
 }

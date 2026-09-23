@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import styles from './App.module.css';
 import { LISTING } from './data/listing';
 import { ActiveModalType, GuestCounts } from './types/listing';
@@ -58,17 +58,20 @@ export const App: React.FC = () => {
   // Focus return management
   useFocusReturn(activeModal);
 
+  // Memoized URL state handler to prevent render loops
+  const handleUrlStateChange = useCallback((state: UrlSyncState) => {
+    setActiveModal(state.modal);
+    setLightboxIndex(state.photoIndex);
+    setLightboxOrigin(state.origin);
+  }, []);
+
   // Bidirectional URL search parameter & browser history synchronization
   useUrlSync({
     activeModal,
     lightboxIndex,
     lightboxOrigin,
     totalPhotos: LISTING.photos.length,
-    onStateChange: (state: UrlSyncState) => {
-      setActiveModal(state.modal);
-      setLightboxIndex(state.photoIndex);
-      setLightboxOrigin(state.origin);
-    },
+    onStateChange: handleUrlStateChange,
   });
 
   // Handlers

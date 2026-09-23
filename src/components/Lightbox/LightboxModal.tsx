@@ -50,6 +50,19 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
     };
   }, [isOpen]);
 
+  // Preload adjacent images for instantaneous, lag-free photo switching
+  useEffect(() => {
+    if (!isOpen || photos.length === 0) return;
+    const preloadIndices = [activeIndex - 1, activeIndex + 1, activeIndex + 2];
+    preloadIndices.forEach((idx) => {
+      if (idx >= 0 && idx < photos.length) {
+        const p = photos[idx];
+        const img = new Image();
+        img.src = p.webp;
+      }
+    });
+  }, [isOpen, activeIndex, photos]);
+
   if (!isOpen || photos.length === 0) return null;
 
   const currentPhoto = photos[activeIndex] || photos[0];
@@ -129,7 +142,6 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
 
         {/* Focused Photo Viewport */}
         <div
-          key={currentPhoto.id}
           className={styles.imageViewport}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
@@ -138,10 +150,12 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
           }}
         >
           <img
+            key={currentPhoto.id}
             src={imageSource}
             alt={currentPhoto.label}
             className={styles.lightboxImage}
             loading="eager"
+            decoding="async"
             onError={() => setImageErrors((prev) => ({ ...prev, [currentPhoto.id]: true }))}
           />
         </div>
