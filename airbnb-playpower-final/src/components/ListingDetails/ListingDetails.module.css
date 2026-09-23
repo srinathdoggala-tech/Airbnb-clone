@@ -1,0 +1,235 @@
+/* Overview Section */
+.overviewSection {
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.typeTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-xxs);
+}
+
+.specsLine {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+/* Guest Favourite Badge */
+.guestFavouriteBadge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-xl);
+  background-color: var(--color-bg-primary);
+}
+
+.badgeLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.wreathIcon {
+  color: #E07912;
+}
+
+.badgeTextGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.badgeSubtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  max-width: 380px;
+}
+
+.badgeScores {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  text-align: center;
+}
+
+.scoreItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreValue {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.scoreLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.scoreDivider {
+  width: 1px;
+  height: 36px;
+  background-color: var(--color-border-medium);
+}
+
+/* Host Mini Profile */
+.hostMiniRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.hostAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-circle);
+  background: linear-gradient(135deg, #FF385C, #E00B41);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.hostDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.hostName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.hostTenure {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Highlights Section */
+.highlightsSection {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+}
+
+.highlightIcon {
+  color: var(--color-text-primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.highlightTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 2px;
+}
+
+.highlightDesc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Description Section */
+.descriptionSection {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-md);
+}
+
+.descriptionContent {
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  white-space: pre-line;
+}
+
+.descriptionClamped {
+  max-height: 120px;
+  overflow: hidden;
+}
+
+.fadeOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg-primary));
+  pointer-events: none;
+}
+
+.showMoreBtn {
+  margin-top: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: underline;
+  color: var(--color-text-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Sleeping Arrangements */
+.sleepSection {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.bedCard {
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.bedCardIcon {
+  color: var(--color-text-primary);
+}
+
+.bedRoomName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.bedType {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}

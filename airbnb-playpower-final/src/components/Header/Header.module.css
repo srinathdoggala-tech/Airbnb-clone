@@ -1,0 +1,154 @@
+.header {
+  position: relative;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border-light);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  z-index: var(--z-header);
+}
+
+.headerInner {
+  width: 100%;
+  max-width: var(--max-header-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Section */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-brand);
+  text-decoration: none;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.5px;
+}
+
+.brandText {
+  color: var(--color-brand);
+  font-weight: 700;
+  display: block;
+}
+
+/* Center Search Pill */
+.searchPill {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-pill);
+  padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-md);
+  box-shadow: var(--shadow-xs);
+  background-color: var(--color-bg-primary);
+  cursor: pointer;
+  transition: box-shadow var(--transition-fast);
+}
+
+.searchPill:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.searchItem {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  padding: 0 var(--space-sm);
+  background: none;
+  border: none;
+}
+
+.searchItemMuted {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+  padding: 0 var(--space-sm);
+  background: none;
+  border: none;
+}
+
+.searchDivider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--color-border-medium);
+}
+
+.searchBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-brand);
+  color: var(--color-text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--space-xs);
+  transition: background-color var(--transition-fast);
+}
+
+.searchBtn:hover {
+  background-color: var(--color-brand-hover);
+}
+
+/* Right Nav Section */
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.hostLink {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-pill);
+  transition: background-color var(--transition-fast);
+}
+
+.hostLink:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.iconBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.iconBtn:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.userMenuBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 5px 5px 5px 12px;
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-primary);
+  transition: box-shadow var(--transition-fast);
+}
+
+.userMenuBtn:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 900px) {
+  .brandText {
+    display: none;
+  }
+  .searchPill {
+    display: none;
+  }
+}

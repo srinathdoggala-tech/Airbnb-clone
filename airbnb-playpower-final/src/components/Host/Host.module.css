@@ -1,0 +1,159 @@
+.hostSection {
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-xl);
+}
+
+.hostGrid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* Left Host Badge Card */
+.hostCard {
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatarLarge {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-circle);
+  background: linear-gradient(135deg, #FF385C, #D70466);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.hostCardName {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xxs);
+}
+
+.superhostBadge {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.statsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statVal {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.statLbl {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.statDivider {
+  width: 1px;
+  height: 32px;
+  background-color: var(--color-border-light);
+}
+
+/* Right Details Column */
+.hostInfoCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.factsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.factItem {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+}
+
+/* Co-hosts */
+.coHostsGroup {
+  margin-top: var(--space-md);
+}
+
+.coHostsTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-sm);
+}
+
+.coHostsAvatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.coHostItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.coHostAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-circle);
+  background-color: #EBEBEB;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+}
+
+@media (max-width: 900px) {
+  .hostGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}

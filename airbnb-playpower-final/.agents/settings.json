@@ -1,0 +1,8 @@
+{
+  "project": "airbnb-clone-candolim",
+  "referenceUrl": "https://airbnb-clone-umber-two.vercel.app",
+  "framework": "React 18 + Vite",
+  "auditFramework": "SWAT Matrix (Security, Write-Safety, Availability, Threat)",
+  "assetFormat": "WebP (Lossless Quality, SSIM > 0.98)",
+  "strictZeroCrash": true
+}

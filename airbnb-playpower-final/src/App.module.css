@@ -1,0 +1,25 @@
+.mainLayout {
+  display: grid;
+  grid-template-columns: 1fr 370px;
+  gap: var(--space-3xl);
+  align-items: start;
+  margin-bottom: var(--space-2xl);
+  position: relative;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.rightColumn {
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .mainLayout {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}

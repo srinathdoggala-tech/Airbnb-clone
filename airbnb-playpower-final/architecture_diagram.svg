@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" width="1600" height="1100" style="background:#0b0f19; font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF385C" />
+      <stop offset="100%" stop-color="#D70466" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161f30" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="serviceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="cacheGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Title & Header Banner -->
+  <rect x="40" y="30" width="1520" height="90" rx="16" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="2" filter="url(#shadow)" />
+  <rect x="40" y="30" width="12" height="90" rx="6" fill="url(#headerGrad)" />
+  <text x="75" y="70" fill="#ffffff" font-size="26" font-weight="800" letter-spacing="0.5">Airbnb Platform Architecture: Production-Scale Distributed Vacation-Rental Engine</text>
+  <text x="75" y="98" fill="#94a3b8" font-size="14" font-weight="500">Global High-Throughput Microservices · OpenSearch Spatial Indexing · Redis Redlock · Kafka Event Sagas · Multi-Region Active-Active</text>
+
+  <!-- TIER 1: CLIENTS & EDGE TIER -->
+  <g transform="translate(40, 145)">
+    <rect width="1520" height="135" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text x="25" y="28" fill="#38bdf8" font-size="13" font-weight="700" letter-spacing="1">TIER 1: CLIENT ACCESS &amp; GLOBAL EDGE CDN (ANYCAST NETWORK)</text>
+
+    <!-- Box: Clients -->
+    <g transform="translate(25, 45)">
+      <rect width="260" height="70" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#shadow)" />
+      <text x="20" y="32" fill="#f8fafc" font-size="15" font-weight="700">Web &amp; Mobile Clients</text>
+      <text x="20" y="52" fill="#94a3b8" font-size="12">React 19 SPA · Next.js · iOS · Android</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 300 80 L 345 80" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="4,4" />
+    <polygon points="345,76 355,80 345,84" fill="#0ea5e9" />
+
+    <!-- Box: Cloudflare Anycast WAF -->
+    <g transform="translate(365, 45)">
+      <rect width="320" height="70" rx="10" fill="url(#cardGrad)" stroke="#0284c7" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="20" y="32" fill="#38bdf8" font-size="15" font-weight="700">Cloudflare Edge WAF &amp; DDoS</text>
+      <text x="20" y="52" fill="#94a3b8" font-size="12">Anycast DNS · SSL Termination · Bot Evasion</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 700 80 L 745 80" stroke="#0ea5e9" stroke-width="2" />
+    <polygon points="745,76 755,80 745,84" fill="#0ea5e9" />
+
+    <!-- Box: Edge Image Optimizer -->
+    <g transform="translate(765, 45)">
+      <rect width="330" height="70" rx="10" fill="url(#cardGrad)" stroke="#0284c7" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="20" y="32" fill="#38bdf8" font-size="15" font-weight="700">Edge Image Optimizer (WebP/AVIF)</text>
+      <text x="20" y="52" fill="#94a3b8" font-size="12">On-the-fly Resize · BlurHash LQIP · CDN Caching</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 1110 80 L 1155 80" stroke="#0ea5e9" stroke-width="2" />
+    <polygon points="1155,76 1165,80 1155,84" fill="#0ea5e9" />
+
+    <!-- Box: API Gateway / BFF -->
+    <g transform="translate(1175, 45)">
+      <rect width="320" height="70" rx="10" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="2" filter="url(#shadow)" />
+      <text x="20" y="32" fill="#ffffff" font-size="15" font-weight="700">Envoy API Gateway &amp; GraphQL BFF</text>
+      <text x="20" y="52" fill="#94a3b8" font-size="12">Apollo Federation · Rate Limiting · Auth JWT</text>
+    </g>
+  </g>
+
+  <!-- TIER 2: CORE MICROSERVICES LAYER -->
+  <g transform="translate(40, 300)">
+    <rect width="1520" height="240" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text x="25" y="28" fill="#60a5fa" font-size="13" font-weight="700" letter-spacing="1">TIER 2: CORE MICROSERVICES LAYER (KUBERNETES MULTI-REGION CLUSTERS)</text>
+
+    <!-- Microservice 1: Search & Discovery -->
+    <g transform="translate(25, 45)">
+      <rect width="350" height="80" rx="10" fill="url(#cardGrad)" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="20" y="30" fill="#ffffff" font-size="15" font-weight="700">Search &amp; Discovery Service</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">Geospatial H3 Search · Filter Ranking</text>
+      <text x="20" y="68" fill="#3b82f6" font-size="11" font-weight="600">Tech: Go · gRPC · OpenSearch Client</text>
+    </g>
+
+    <!-- Microservice 2: Listing & Inventory -->
+    <g transform="translate(400, 45)">
+      <rect width="350" height="80" rx="10" fill="url(#cardGrad)" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="20" y="30" fill="#ffffff" font-size="15" font-weight="700">Listing &amp; Content Management</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">Property Specs · Photo Metadata · Rules</text>
+      <text x="20" y="68" fill="#3b82f6" font-size="11" font-weight="600">Tech: Node.js · TypeScript · PostgreSQL</text>
+    </g>
+
+    <!-- Microservice 3: Booking & Saga Orchestrator -->
+    <g transform="translate(775, 45)">
+      <rect width="350" height="80" rx="10" fill="url(#cardGrad)" stroke="#f43f5e" stroke-width="2" filter="url(#shadow)" />
+      <text x="20" y="30" fill="#ffffff" font-size="15" font-weight="700">Booking &amp; Checkout Engine (Saga)</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">Two-Phase Commit · Distributed Lock</text>
+      <text x="20" y="68" fill="#fb7185" font-size="11" font-weight="600">Tech: Temporal.io · Go · Kafka Saga</text>
+    </g>
+
+    <!-- Microservice 4: Availability & Pricing -->
+    <g transform="translate(1150, 45)">
+      <rect width="345" height="80" rx="10" fill="url(#cardGrad)" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="20" y="30" fill="#ffffff" font-size="15" font-weight="700">Pricing &amp; Calendar Availability</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">Dynamic Rates · 5-Night Minimums</text>
+      <text x="20" y="68" fill="#3b82f6" font-size="11" font-weight="600">Tech: Rust / Go · Redis Cluster</text>
+    </g>
+
+    <!-- Microservice 5: Reviews & Reputation -->
+    <g transform="translate(25, 140)">
+      <rect width="350" height="80" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#shadow)" />
+      <text x="20" y="30" fill="#f8fafc" font-size="15" font-weight="700">Reviews &amp; Reputation Engine</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">4.95 Rating Aggregation · Guest Fav Badges</text>
+      <text x="20" y="68" fill="#64748b" font-size="11">Tech: Node.js · TimescaleDB</text>
+    </g>
+
+    <!-- Microservice 6: Host & User Identity -->
+    <g transform="translate(400, 140)">
+      <rect width="350" height="80" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#shadow)" />
+      <text x="20" y="30" fill="#f8fafc" font-size="15" font-weight="700">Host &amp; Identity Service</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">Mirashya Profile · Co-Hosts · Verification</text>
+      <text x="20" y="68" fill="#64748b" font-size="11">Tech: Go · OAuth 2.0 · OIDC</text>
+    </g>
+
+    <!-- Microservice 7: Messaging & Notifications -->
+    <g transform="translate(775, 140)">
+      <rect width="350" height="80" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#shadow)" />
+      <text x="20" y="30" fill="#f8fafc" font-size="15" font-weight="700">Messaging &amp; Push Service</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">Host Chat · Reservation Alerts · WebSockets</text>
+      <text x="20" y="68" fill="#64748b" font-size="11">Tech: Go WebSocket · Firebase Cloud</text>
+    </g>
+
+    <!-- Microservice 8: Recommendation & Nearby -->
+    <g transform="translate(1150, 140)">
+      <rect width="345" height="80" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#shadow)" />
+      <text x="20" y="30" fill="#f8fafc" font-size="15" font-weight="700">Recommendation Service</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">Nearby Stays Carousel · Collaborative Filter</text>
+      <text x="20" y="68" fill="#64748b" font-size="11">Tech: Python · Ray · Vector Embeddings</text>
+    </g>
+  </g>
+
+  <!-- TIER 3: STREAMING & DISTRIBUTED CACHING -->
+  <g transform="translate(40, 560)">
+    <rect width="1520" height="155" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text x="25" y="28" fill="#f59e0b" font-size="13" font-weight="700" letter-spacing="1">TIER 3: EVENT STREAMING &amp; HIGH-THROUGHPUT CACHING LAYER</text>
+
+    <!-- Redis Cluster -->
+    <g transform="translate(25, 45)">
+      <rect width="725" height="90" rx="10" fill="url(#cardGrad)" stroke="#ef4444" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="25" y="35" fill="#f87171" font-size="17" font-weight="700">Redis Enterprise Cluster (In-Memory Hot Layer)</text>
+      <text x="25" y="58" fill="#cbd5e1" font-size="13">Distributed Calendar Locking (Redlock) · Sub-millisecond Session Storage</text>
+      <text x="25" y="78" fill="#94a3b8" font-size="12">Active-Active Geo-Replication · Read Replicas per Region · 99.999% SLA</text>
+    </g>
+
+    <!-- Kafka Cluster -->
+    <g transform="translate(775, 45)">
+      <rect width="720" height="90" rx="10" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="25" y="35" fill="#fbbf24" font-size="17" font-weight="700">Apache Kafka Distributed Event Streaming</text>
+      <text x="25" y="58" fill="#cbd5e1" font-size="13">Event Topics: `listing.updated`, `booking.initiated`, `payment.settled`, `review.posted`</text>
+      <text x="25" y="78" fill="#94a3b8" font-size="12">Debezium CDC Pipeline · Schema Registry · Exactly-Once Semantics (EOS)</text>
+    </g>
+  </g>
+
+  <!-- TIER 4: PERSISTENT STORAGE & SEARCH -->
+  <g transform="translate(40, 735)">
+    <rect width="1520" height="175" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text x="25" y="28" fill="#10b981" font-size="13" font-weight="700" letter-spacing="1">TIER 4: PERSISTENT DATA, SEARCH CLUSTER &amp; OBJECT STORAGE</text>
+
+    <!-- OpenSearch -->
+    <g transform="translate(25, 45)">
+      <rect width="470" height="110" rx="10" fill="url(#cardGrad)" stroke="#059669" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="20" y="32" fill="#34d399" font-size="16" font-weight="700">OpenSearch / Elasticsearch Cluster</text>
+      <text x="20" y="55" fill="#cbd5e1" font-size="13">Uber H3 Spatial Indexing · Candolim Geospatial</text>
+      <text x="20" y="75" fill="#94a3b8" font-size="12">Dynamic Price Filtering · Multi-sharded Inverted Index</text>
+      <text x="20" y="95" fill="#10b981" font-size="11" font-weight="600">Query Latency: &lt; 15ms p99</text>
+    </g>
+
+    <!-- PostgreSQL Sharded -->
+    <g transform="translate(520, 45)">
+      <rect width="470" height="110" rx="10" fill="url(#cardGrad)" stroke="#059669" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="20" y="32" fill="#34d399" font-size="16" font-weight="700">PostgreSQL Multi-Region Sharded (Citus)</text>
+      <text x="20" y="55" fill="#cbd5e1" font-size="13">ACID Financial Ledger · Booking Transactions</text>
+      <text x="20" y="75" fill="#94a3b8" font-size="12">Geographic Partitioning (India / APAC / US / EU)</text>
+      <text x="20" y="95" fill="#10b981" font-size="11" font-weight="600">Zero-Downtime Logical Replication</text>
+    </g>
+
+    <!-- Object Storage -->
+    <g transform="translate(1015, 45)">
+      <rect width="480" height="110" rx="10" fill="url(#cardGrad)" stroke="#059669" stroke-width="1.5" filter="url(#shadow)" />
+      <text x="20" y="32" fill="#34d399" font-size="16" font-weight="700">Cloudflare R2 / AWS S3 Media Bucket</text>
+      <text x="20" y="55" fill="#cbd5e1" font-size="13">High-Res Property Photos (43+ Photos)</text>
+      <text x="20" y="75" fill="#94a3b8" font-size="12">Automatic WebP/AVIF Transcoding · Multi-CDN Shield</text>
+      <text x="20" y="95" fill="#10b981" font-size="11" font-weight="600">Durability: 99.999999999% (11 9s)</text>
+    </g>
+  </g>
+
+  <!-- TIER 5: DEVOPS, SECURITY & OBSERVABILITY FOOTER -->
+  <g transform="translate(40, 930)">
+    <rect width="1520" height="135" rx="14" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+    <text x="25" y="28" fill="#a855f7" font-size="13" font-weight="700" letter-spacing="1">TIER 5: DEVOPS, CI/CD, OBSERVABILITY &amp; SWAT SECURITY GOVERNANCE</text>
+
+    <g transform="translate(25, 45)">
+      <rect width="350" height="70" rx="10" fill="url(#cardGrad)" stroke="#7c3aed" stroke-width="1" />
+      <text x="20" y="30" fill="#c084fc" font-size="14" font-weight="700">GitOps &amp; Infrastructure as Code</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">Terraform · ArgoCD · Multi-Cloud Kubernetes</text>
+    </g>
+
+    <g transform="translate(400, 45)">
+      <rect width="350" height="70" rx="10" fill="url(#cardGrad)" stroke="#7c3aed" stroke-width="1" />
+      <text x="20" y="30" fill="#c084fc" font-size="14" font-weight="700">Observability &amp; Tracing</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">OpenTelemetry · Prometheus · Grafana · Datadog</text>
+    </g>
+
+    <g transform="translate(775, 45)">
+      <rect width="350" height="70" rx="10" fill="url(#cardGrad)" stroke="#7c3aed" stroke-width="1" />
+      <text x="20" y="30" fill="#c084fc" font-size="14" font-weight="700">SWAT Quality &amp; Security Automation</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">DOM Verification · Sanitization · Vitest E2E</text>
+    </g>
+
+    <g transform="translate(1150, 45)">
+      <rect width="345" height="70" rx="10" fill="url(#cardGrad)" stroke="#7c3aed" stroke-width="1" />
+      <text x="20" y="30" fill="#c084fc" font-size="14" font-weight="700">Disaster Recovery &amp; SRE</text>
+      <text x="20" y="50" fill="#94a3b8" font-size="12">Active-Active Failover · RPO &lt; 1s · RTO &lt; 30s</text>
+    </g>
+  </g>
+</svg>

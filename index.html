@@ -12,6 +12,27 @@
   </head>
   <body>
     <div id="root"></div>
+    <script src="/axe.min.js"></script>
+    <script>
+      window.runAxeAudit = function() {
+        if (window.axe) {
+          window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] } }).then(function(results) {
+            window.__axeResults = results;
+            var el = document.createElement('div');
+            el.id = 'axe-report-container';
+            el.setAttribute('data-violations', JSON.stringify(results.violations));
+            el.setAttribute('data-passes', results.passes.length);
+            el.innerText = 'AXE_VIOLATIONS_COUNT:' + results.violations.length + ';AXE_PASSES_COUNT:' + results.passes.length;
+            document.body.appendChild(el);
+          }).catch(function(err) {
+            console.error('Axe run error:', err);
+          });
+        }
+      };
+      window.addEventListener('load', function() {
+        setTimeout(window.runAxeAudit, 1500);
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

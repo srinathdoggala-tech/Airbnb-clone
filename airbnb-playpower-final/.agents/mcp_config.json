@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "nexus-mcp": {
+      "command": "node",
+      "args": ["e:/android projects/nexus-mcp/mcp-server/dist/index.js"]
+    }
+  }
+}
+

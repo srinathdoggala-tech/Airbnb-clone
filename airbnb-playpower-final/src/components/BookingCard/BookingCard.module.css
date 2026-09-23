@@ -1,0 +1,247 @@
+.cardWrapper {
+  position: relative;
+}
+
+.stickyCard {
+  position: sticky;
+  top: 100px;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-card);
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.priceGroup {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xxs);
+}
+
+.pricePerNight {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.nightLabel {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.ratingGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.reviewCountLink {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+}
+
+/* Inputs Box */
+.inputsBox {
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+  position: relative;
+  background-color: var(--color-bg-primary);
+}
+
+.dateRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.dateField {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.dateField:first-child {
+  border-right: 1px solid var(--color-border-dark);
+}
+
+.fieldLabel {
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.fieldValue {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.guestField {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+
+.guestFieldLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reserve CTA */
+.reserveBtn {
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--color-brand-gradient);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-xs);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.reserveBtn:hover {
+  opacity: 0.95;
+  transform: scale(1.01);
+}
+
+.noChargeNotice {
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+/* Pricing Breakdown */
+.pricingTable {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.pricingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.pricingLabelUnderline {
+  text-decoration: underline;
+  color: var(--color-text-primary);
+}
+
+.totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-light);
+  color: var(--color-text-primary);
+}
+
+/* Guest Selector Popover */
+.popover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-popover);
+  padding: var(--space-md);
+  z-index: var(--z-popover);
+  margin-top: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.guestRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-xs) 0;
+}
+
+.guestTypeTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.guestTypeSubtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.counterGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.counterBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-circle);
+  border: 1px solid var(--color-border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-primary);
+  transition: all var(--transition-fast);
+}
+
+.counterBtn:hover:not(:disabled) {
+  border-color: var(--color-border-dark);
+  color: var(--color-text-primary);
+}
+
+.counterValue {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  min-width: 18px;
+  text-align: center;
+}
+
+.popoverCloseBtn {
+  align-self: flex-end;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: underline;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+.popoverCloseBtn:hover {
+  background-color: var(--color-bg-hover);
+}
